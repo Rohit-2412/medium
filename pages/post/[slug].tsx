@@ -7,6 +7,7 @@ import { GetStaticProps } from "next";
 import PortableText from "react-portable-text";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { useState } from "react";
+import Head from "next/head";
 
 interface CommentFormInput {
     _id: string;
@@ -46,6 +47,9 @@ const Post = ({ post }: Props) => {
     };
     return (
         <main>
+            <Head>
+                <title>{post.title}</title>
+            </Head>
             <Header />
             <img
                 className="w-full h-40 object-cover"
